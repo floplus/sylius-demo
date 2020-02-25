@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6dc3513c53313629196397334049370",
+    "content-hash": "a806bc8dbd7c7a9aa3f5cc925baf5004",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -5575,16 +5575,16 @@
         },
         {
             "name": "sylius/grid-bundle",
-            "version": "v1.7.4",
+            "version": "v1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusGridBundle.git",
-                "reference": "ba6deedce754d46695def7e528eaffc237489ee6"
+                "reference": "6754035a9d235d9a76ea6f928e9828767f423187"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/ba6deedce754d46695def7e528eaffc237489ee6",
-                "reference": "ba6deedce754d46695def7e528eaffc237489ee6",
+                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/6754035a9d235d9a76ea6f928e9828767f423187",
+                "reference": "6754035a9d235d9a76ea6f928e9828767f423187",
                 "shasum": ""
             },
             "require": {
@@ -5670,7 +5670,7 @@
                 "sylius",
                 "webshop"
             ],
-            "time": "2020-01-02T15:28:01+00:00"
+            "time": "2019-10-18T15:43:06+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -12524,6 +12524,7 @@
                 "MIT"
             ],
             "description": "PHPStan Phar distribution",
+            "abandoned": "phpstan/phpstan",
             "time": "2019-10-22T20:46:16+00:00"
         },
         {
