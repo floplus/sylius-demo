@@ -2,4 +2,15 @@ sylius_admin:
     resource: "@SyliusAdminBundle/Resources/config/routing.yml"
     prefix: /admin
 
-
+app_admin_price:
+    resource: | # hack to treat array of configuration as one string for Symfony
+        alias: app.price
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        except: [show]
+        redirect: update
+        vars:
+            create:
+                header: Custom header
+    type: sylius.resource
+    prefix: /admin
