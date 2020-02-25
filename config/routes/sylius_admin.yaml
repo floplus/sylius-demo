@@ -9,6 +9,7 @@ app_admin_price:
         templates: "@SyliusAdmin\\Crud"
         except: [show]
         redirect: update
+        grid: app_admin_price
         vars:
             create:
                 header: Custom header

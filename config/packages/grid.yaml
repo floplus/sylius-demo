@@ -1,0 +1,48 @@
+sylius_grid:
+    grids:
+        app_admin_price:
+            driver:
+                options:
+                    class: '%app.model.price.class%'
+            sorting:
+                cooperative: desc
+                price: asc
+            fields:
+                id:
+                    type: string
+                    label: app.ui.id
+                cooperative:
+                    type: string
+                    sortable: ~
+                customField:
+                    type: string
+                    path: randomData
+                price:
+                    type: twig
+                    options:
+                        template: 'Admin/Price/Grid/priceField.html.twig'
+                    sortable: ~
+            filters:
+                search:
+                    type: string
+                    options:
+                        fields: [cooperative]
+            actions:
+                main:
+                    google:
+                        type: create
+                        options:
+                            link:
+                                url: http://google.com
+                    product:
+                        type: create
+                        options:
+                            link:
+                                path: sylius_admin_product_index
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

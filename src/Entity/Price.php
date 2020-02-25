@@ -37,6 +37,11 @@ class Price implements ResourceInterface
         return $this->id;
     }
 
+    public function getRandomData(): int
+    {
+        return 4;
+    }
+
     public function getCooperative(): ?string
     {
         return $this->cooperative;
