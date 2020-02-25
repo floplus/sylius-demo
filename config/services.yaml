@@ -48,3 +48,11 @@ services:
                 label: Zone based calculator
                 form_type: App\Form\Type\ZoneBasedShippingCalculatorConfigurationType
             }
+
+    App\EventListener\AdminMenuListener:
+        tags:
+            - {
+                  name: kernel.event_listener
+                  event: sylius.menu.admin.main
+                  method: addMenu
+            }
