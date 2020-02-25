@@ -38,3 +38,13 @@ services:
         arguments: ['@request_stack', '@sylius.repository.channel']
         tags:
             - { name: sylius.context.channel }
+
+    App\Shipping\ZoneBasedShippingCalculator:
+        arguments: ['@sylius.zone_matcher']
+        tags:
+            - {
+                name: sylius.shipping_calculator
+                calculator: zone_based
+                label: Zone based calculator
+                form_type: App\Form\Type\ZoneBasedShippingCalculatorConfigurationType
+            }
