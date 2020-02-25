@@ -3,3 +3,4 @@ sylius_resource:
         app.price:
             classes:
                 model: App\Entity\Price
+                form: App\Form\Type\PriceFormType

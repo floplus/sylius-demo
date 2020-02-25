@@ -27,6 +27,12 @@ class Price implements ResourceInterface
     private $cooperative;
 
     /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $status = 'submitted';
+
+    /**
      * @var int|null
      * @ORM\Column(type="integer", options={"default": 0})
      */
@@ -60,5 +66,15 @@ class Price implements ResourceInterface
     public function setPrice(?int $price): void
     {
         $this->price = $price;
+    }
+
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): void
+    {
+        $this->status = $status;
     }
 }

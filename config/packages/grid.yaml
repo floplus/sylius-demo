@@ -17,6 +17,8 @@ sylius_grid:
                 customField:
                     type: string
                     path: randomData
+                status:
+                    type: string
                 price:
                     type: twig
                     options:
@@ -46,3 +48,33 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
+                    approve:
+                        type: apply_transition
+                        options:
+                            transition: approve
+                            graph: app_price
+                            link:
+                                route: app_admin_price_approve
+                                parameters:
+                                    id: resource.id
+                        label: approve
+                    outdate:
+                        type: apply_transition
+                        options:
+                            transition: outdate
+                            graph: app_price
+                            link:
+                                route: app_admin_price_outdate
+                                parameters:
+                                    id: resource.id
+                        label: outdate
+                    recreate:
+                        type: apply_transition
+                        options:
+                            transition: recreate
+                            graph: app_price
+                            link:
+                                route: app_admin_price_recreate
+                                parameters:
+                                    id: resource.id
+                        label: recreate

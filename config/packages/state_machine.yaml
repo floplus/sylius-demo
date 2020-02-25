@@ -1,0 +1,20 @@
+winzou_state_machine:
+    app_price:
+        class: "%app.model.price.class%"
+        property_path: status
+        graph: app_price
+        state_machine_class: "%sylius.state_machine.class%"
+        states:
+            submitted: ~
+            approved: ~
+            outdated: ~
+        transitions:
+            approve:
+                from: [submitted]
+                to: approved
+            outdate:
+                from: [submitted, approved]
+                to: outdated
+            recreate:
+                from: [outdated]
+                to: submitted

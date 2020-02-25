@@ -15,3 +15,36 @@ app_admin_price:
                 header: Custom header
     type: sylius.resource
     prefix: /admin
+
+app_admin_price_approve:
+    methods: ['PUT']
+    path: '/admin/prices/{id}/approve'
+    defaults:
+        _controller: app.controller.price:applyStateMachineTransitionAction
+        _sylius:
+            section: admin
+            state_machine:
+                graph: app_price
+                transition: approve
+
+app_admin_price_outdate:
+    methods: ['PUT']
+    path: '/admin/prices/{id}/outdate'
+    defaults:
+        _controller: app.controller.price:applyStateMachineTransitionAction
+        _sylius:
+            section: admin
+            state_machine:
+                graph: app_price
+                transition: outdate
+
+app_admin_price_recreate:
+    methods: ['PUT']
+    path: '/admin/prices/{id}/recreate'
+    defaults:
+        _controller: app.controller.price:applyStateMachineTransitionAction
+        _sylius:
+            section: admin
+            state_machine:
+                graph: app_price
+                transition: recreate
