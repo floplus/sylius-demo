@@ -1,0 +1,5 @@
+sylius_resource:
+    resources:
+        app.price:
+            classes:
+                model: App\Entity\Price
