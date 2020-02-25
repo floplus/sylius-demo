@@ -29,8 +29,6 @@ final class ZoneBasedShippingCalculator implements CalculatorInterface
         /** @var $subject CoreShipmentInterface */
         Assert::isInstanceOf($subject, CoreShipmentInterface::class);
 
-        VarDumper::dump($configuration);
-
         /** @var OrderInterface $order */
         $order = $subject->getOrder();
 

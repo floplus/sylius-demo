@@ -32,8 +32,6 @@ final class DummyChannelContext implements ChannelContextInterface
     {
         $request = $this->requestStack->getCurrentRequest();
 
-        VarDumper::dump($request);
-
         throw new ChannelNotFoundException();
     }
 }
