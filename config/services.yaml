@@ -60,3 +60,17 @@ services:
     App\Form\Type\PriceFormType:
         arguments:
             - '%app.model.price.class%'
+
+    App\EventListener\SendPriceCreatedEmailEventListener:
+        arguments: ['@sylius.email_sender']
+        tags:
+            - {
+                  name: kernel.event_listener
+                  event: app.price.post_approve
+                  method: send
+            }
+            - {
+                  name: kernel.event_listener
+                  event: app.price.post_update
+                  method: send
+            }

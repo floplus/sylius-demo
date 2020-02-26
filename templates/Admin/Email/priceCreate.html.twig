@@ -1,0 +1,13 @@
+{% extends '@SyliusAdmin/Email/layout.html.twig' %}
+
+{% block subject %}
+    Price created
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <div>
+            Price for cooperative {{ price.cooperative }} was created
+        </div>
+    </div>
+{% endblock %}

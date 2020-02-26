@@ -1,0 +1,5 @@
+sylius_mailer:
+    emails:
+        price_created:
+            template: "Admin/Email/priceCreate.html.twig"
+            subject: test

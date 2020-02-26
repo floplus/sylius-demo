@@ -26,6 +26,7 @@ app_admin_price_approve:
             state_machine:
                 graph: app_price
                 transition: approve
+            event: approve
 
 app_admin_price_outdate:
     methods: ['PUT']
