@@ -69,8 +69,3 @@ services:
                   event: app.price.post_approve
                   method: send
             }
-            - {
-                  name: kernel.event_listener
-                  event: app.price.post_update
-                  method: send
-            }
