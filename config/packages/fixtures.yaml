@@ -1,0 +1,73 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        replay:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                locale:
+                    options:
+                        locales:
+                            - de_DE
+                currency:
+                    options:
+                        currencies:
+                            - 'EUR'
+
+                geographical:
+                    options:
+                        countries:
+                            - 'DE'
+                        zones:
+                            US:
+                                name: 'Germany'
+                                countries:
+                                    - 'DE'
+
+                channel:
+                    options:
+                        custom:
+                            fashion_web_store:
+                                name: 'Fashion Web Store'
+                                code: 'FASHION_WEB'
+                                locales:
+                                    - '%locale%'
+                                currencies:
+                                    - 'EUR'
+                                enabled: true
+                                hostname: '%env(resolve:SYLIUS_FIXTURES_HOSTNAME)%'
+                                shop_billing_data:
+                                    company: 'Sylius'
+                                    tax_id: '0001112222'
+                                    country_code: 'US'
+                                    street: 'Test St. 15'
+                                    city: 'eCommerce Town'
+                                    postcode: '00 33 22'
+
+
+                admin_user:
+                    name: 'admin_user'
+                    options:
+                        custom:
+                            -   email: 'sylius@example.com'
+                                username: 'sylius'
+                                password: 'sylius'
+                                enabled: true
+                                locale_code: '%locale%'
+                                first_name: 'John'
+                                last_name: 'Doe'
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/john.jpg'
+
+                            -   email: 'api@example.com'
+                                username: 'api'
+                                password: 'sylius-api'
+                                enabled: true
+                                locale_code: '%locale%'
+                                first_name: 'Luke'
+                                last_name: 'Brushwood'
+                                api: true
+                                avatar: '@SyliusCoreBundle/Resources/fixtures/adminAvatars/luke.jpg'
